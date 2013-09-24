@@ -1,4 +1,7 @@
 Lazycats::Application.routes.draw do
+  get "lazies/home"
+  get "lazies/help"
+  get "lazies/about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
