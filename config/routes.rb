@@ -1,14 +1,18 @@
 Lazycats::Application.routes.draw do
-  get "users/new"
-  match '/', to: 'lazies#home', via: 'get'
-  match '/signup', to: 'users#new',       via: 'get'
-  match '/help',    to: 'lazies#help',    via: 'get'
-  match '/about',   to: 'lazies#about',   via: 'get'
-  # The priority is based upon order of creation: first created -> highest priority.
+
+    # You can have the root of your site routed with "root"
+  root to: 'lazies#home'
+
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root to: 'lazies#home'
+  match '/',        to: 'lazies#home',      via: 'get'
+  match '/signup',  to: 'users#new',        via: 'get'
+  match '/help',    to: 'lazies#help',      via: 'get'
+  match '/about',   to: 'lazies#about',     via: 'get'
+
+  resources :users
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
