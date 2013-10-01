@@ -1,12 +1,8 @@
-<div class="center hero-unit">
-  <h1>Welcome to Lazy cats's home</h1>
 
-  <h2>
-    This is the home page for the
-    <a href="http://lazycats.herokuapp.com/lazies/home">Lazy cats</a>.
-  </h2>
-
-  <%= link_to "Sign in now!", '#', class: "btn btn-large btn-primary" %>
-</div>
-
-<%= image_tag("icon.jpg", alt: "Lazy cats") %>
+ 	<%= image_tag("bg000.jpg", alt: "Lazy cats") %> 
+ 	<% if signed_in? %>
+ 		<p>花相似，花相似，相似送花花相似，相似花不开；</p>
+		<p>久相思，久相思，相思还久久想思，相思久不归。</p>
+ 	<% else %>  		 	
+ 		<%= render 'sessions/new' %>
+ 	<% end %>

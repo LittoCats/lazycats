@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <table align="center">
+        <tr>
+          <td><%= f.label :email %></td>
+          <td><%= f.text_field :email %></td>
+
+          <td><%= f.label :password %></td>
+          <td><%= f.password_field :password %></td>
+
+          <td><%= f.submit "Sign in", class: "btn btn-primary" %></td>
+          <td><%= link_to "Anonymous", signup_path %></td>
+        </tr>
+        
+      </table>
+      
+    <% end %>
+
+    
+  </div>
+</div>

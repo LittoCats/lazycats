@@ -8,10 +8,13 @@ Lazycats::Application.routes.draw do
 
   match '/',        to: 'lazies#home',      via: 'get'
   match '/signup',  to: 'users#new',        via: 'get'
+  match '/signin',  to: 'sessions#new',     via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
   match '/help',    to: 'lazies#help',      via: 'get'
   match '/about',   to: 'lazies#about',     via: 'get'
-
-  resources :users
 
 
   # Example of regular route:
